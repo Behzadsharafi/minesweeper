@@ -1,15 +1,15 @@
 package minesweeper;
 
-import java.awt.Color;
+
 
 import javax.swing.JButton;
 
-public class MineTile extends JButton {
+public class Tile extends JButton {
     int row;
     int column;
 
 
-    public MineTile(int r, int c) {
+    public Tile(int r, int c) {
         this.row = r;
         this.column = c;
   

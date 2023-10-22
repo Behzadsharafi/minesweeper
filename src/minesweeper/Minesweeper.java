@@ -22,8 +22,8 @@ public class Minesweeper {
 	JPanel textPanel = new JPanel();
 	JPanel boardPanel = new JPanel();
 
-	MineTile[][] board;
-	ArrayList<MineTile> mineList;
+	Tile[][] board;
+	ArrayList<Tile> mineList;
 	Random random = new Random();
 
 	int tilesClicked = 0;
@@ -38,7 +38,7 @@ public class Minesweeper {
 		this.mineCount = mines;
 		this.boardWidth = numCols * tileSize;
 		this.boardHeight = numRows * tileSize;
-		this.board = new MineTile[numRows][numCols];
+		this.board = new Tile[numRows][numCols];
 		// frame.setVisible(true);
 		frame.setSize(boardWidth, boardHeight);
 		frame.setLocationRelativeTo(null);
@@ -48,7 +48,6 @@ public class Minesweeper {
 
 		textLabel.setFont(new Font("Arial", Font.BOLD, 25));
 		textLabel.setHorizontalAlignment(JLabel.CENTER);
-//		textLabel.setText("Minesweeper: " + Integer.toString(mineCount));
 		textLabel.setText("Mines: " + Integer.toString(mineCount) + " | Flags: 0");
 		textLabel.setOpaque(true);
 
@@ -72,7 +71,7 @@ public class Minesweeper {
 
 		for (int r = 0; r < numRows; r++) {
 			for (int c = 0; c < numCols; c++) {
-				MineTile tile = new MineTile(r, c);
+				Tile tile = new Tile(r, c);
 				board[r][c] = tile;
 			
 
@@ -86,7 +85,7 @@ public class Minesweeper {
 						if (gameOver) {
 							return;
 						}
-						MineTile tile = (MineTile) e.getSource();
+						Tile tile = (Tile) e.getSource();
 
 						// Left Click
 						if (e.getButton() == MouseEvent.BUTTON1) {
@@ -128,12 +127,12 @@ public class Minesweeper {
 
 		setMines();
 
-		System.out.println(Arrays.deepToString(board));
+	
 
 	}
 
 	void setMines() {
-		mineList = new ArrayList<MineTile>();
+		mineList = new ArrayList<Tile>();
 		
 		 int totalTiles = numRows * numCols;
 		 
@@ -146,7 +145,7 @@ public class Minesweeper {
 			int r = random.nextInt(numRows);
 			int c = random.nextInt(numCols);
 
-			MineTile tile = board[r][c];
+			Tile tile = board[r][c];
 			if (!mineList.contains(tile)) {
 				mineList.add(tile);
 				mineLeft -= 1;
@@ -156,7 +155,7 @@ public class Minesweeper {
 
 	void revealMines() {
 		for (int i = 0; i < mineList.size(); i++) {
-			MineTile tile = mineList.get(i);
+			Tile tile = mineList.get(i);
 			ImageIcon bombIcon = new ImageIcon(getClass().getResource("/bomb.png"));
 			Image image = bombIcon.getImage();
 			int iconWidth = tile.getWidth() - 10;
@@ -176,7 +175,7 @@ public class Minesweeper {
 			return;
 		}
 
-		MineTile tile = board[r][c];
+		Tile tile = board[r][c];
 		if (!tile.isEnabled()) {
 			return;
 		}
@@ -238,12 +237,11 @@ public class Minesweeper {
 		gameOver = false;
 		mineList.clear();
 		setMines();
-//		textLabel.setText("Minesweeper: " + Integer.toString(mineCount));
 		textLabel.setText("Mines: " + Integer.toString(mineCount) + " | Flags: 0");
 
 		for (int r = 0; r < numRows; r++) {
 			for (int c = 0; c < numCols; c++) {
-				MineTile tile = board[r][c];
+				Tile tile = board[r][c];
 				tile.setEnabled(true);
 				tile.setText("");
 				tile.setIcon(null);
@@ -265,7 +263,7 @@ public class Minesweeper {
 		int flagsPlaced = 0;
 		for (int r = 0; r < numRows; r++) {
 			for (int c = 0; c < numCols; c++) {
-				MineTile tile = board[r][c];
+				Tile tile = board[r][c];
 				if (tile.getIcon() != null) {
 					flagsPlaced++;
 				}
