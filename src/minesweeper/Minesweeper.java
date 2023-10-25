@@ -218,7 +218,7 @@ public class Minesweeper {
 
 		if (tilesClicked == numRows * numCols - mineList.size()) {
 			gameOver = true;
-			textLabel.setText("Mines Cleared!");
+			textLabel.setText("YOU WIN!");
 		}
 
 	}
