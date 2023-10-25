@@ -21,6 +21,8 @@ public class Minesweeper {
 	JLabel textLabel = new JLabel();
 	JPanel textPanel = new JPanel();
 	JPanel boardPanel = new JPanel();
+	JButton resetButton = new JButton("Reset");
+	JPanel buttonPanel = new JPanel();
 
 	Tile[][] board;
 	ArrayList<Tile> mineList;
@@ -29,9 +31,6 @@ public class Minesweeper {
 	int tilesClicked = 0;
 	boolean gameOver = false;
 
-	JButton resetButton = new JButton("Reset");
-	JPanel buttonPanel = new JPanel();
-
 	Minesweeper(int rows, int columns, int mines) {
 		this.numRows = rows;
 		this.numCols = columns;
@@ -39,7 +38,7 @@ public class Minesweeper {
 		this.boardWidth = numCols * tileSize;
 		this.boardHeight = numRows * tileSize;
 		this.board = new Tile[numRows][numCols];
-		// frame.setVisible(true);
+		
 		frame.setSize(boardWidth, boardHeight);
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
@@ -100,13 +99,8 @@ public class Minesweeper {
 						// Right Click
 						else if (e.getButton() == MouseEvent.BUTTON3) {
 							if (tile.getIcon() == null && tile.isEnabled()) {
-								ImageIcon flagIcon = new ImageIcon(getClass().getResource("/flag.png"));
-								Image image = flagIcon.getImage();
-								int iconWidth = tile.getWidth() - 10;
-								int iconHeight = tile.getHeight() - 10;
-								Image scaledImage = image.getScaledInstance(iconWidth, iconHeight, Image.SCALE_SMOOTH);
-								ImageIcon scaledFlagIcon = new ImageIcon(scaledImage);
-								tile.setIcon(scaledFlagIcon);
+								ImageIcon flagIcon = new ImageIcon(getClass().getResource("../images/flag.png"));
+								tile.setIcon(flagIcon);
 								int flagsPlaced = countFlags();
 								textLabel.setText("Mines: " + mineCount + " | Flags: " + flagsPlaced);
 							} else {
@@ -138,6 +132,7 @@ public class Minesweeper {
 		 
 		  if (mineCount >= totalTiles) {
 		        mineCount = totalTiles - 1; 
+				textLabel.setText("Mines: " + Integer.toString(mineCount) + " | Flags: 0");
 		    }
 
 		int mineLeft = mineCount;
@@ -156,13 +151,9 @@ public class Minesweeper {
 	void revealMines() {
 		for (int i = 0; i < mineList.size(); i++) {
 			Tile tile = mineList.get(i);
-			ImageIcon bombIcon = new ImageIcon(getClass().getResource("/bomb.png"));
-			Image image = bombIcon.getImage();
-			int iconWidth = tile.getWidth() - 10;
-			int iconHeight = tile.getHeight() - 10;
-			Image scaledImage = image.getScaledInstance(iconWidth, iconHeight, Image.SCALE_SMOOTH);
-			ImageIcon scaledBombIcon = new ImageIcon(scaledImage);
-			tile.setIcon(scaledBombIcon);
+			ImageIcon bombIcon = new ImageIcon(getClass().getResource("../images/bomb.png"));
+			tile.setIcon(bombIcon);
+
 		}
 
 		gameOver = true;
