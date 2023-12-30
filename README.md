@@ -1,10 +1,4 @@
-# minesweeper
-
-⛏️ Java Minesweeper Game! ⚫
-
 <div align='center'>
-
-<img src="/src/images/banner.png" alt="logo" width=70% height=auto />
 
 <h1>⛏️ Java Minesweeper Game! ⚫</h1>
 <p>A Minesweeper game in Java which allows the user to customize the number of mines and also the grid dimensions. In this Java game I have utilized AWT to create a graphical user interface. </p>
