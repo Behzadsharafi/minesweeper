@@ -24,7 +24,7 @@
 
 ### :camera: Quick Demo
 
-<div align="center"> <img src="/src/images/minesweeper.gif" alt='image' width='800'/></a> </div>
+<div align="center"> <img src="/src/images/minesweeper.gif" alt='image' width='400'/></a> </div>
 
 ### :dart: Features
 
