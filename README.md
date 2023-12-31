@@ -1,5 +1,8 @@
-[![GitHub Repo Size in Bytes](https://img.shields.io/github/languages/code-size/behzadsharafi/minesweeper)](https://github.com/Behzadsharafi/minesweeper)
 [![Tests Passing](https://github.com/Behzadsharafi/minesweeper/actions/workflows/test.yml/badge.svg)](https://github.com/Behzadsharafi/minesweeper/actions/workflows/test.yml)
+
+   <a href="https://github.com/Behzadsharafi/minesweeper/actions/workflows/test.yml">
+        <img alt="Tests" src="https://github.com/Behzadsharafi/minesweeper/actions/workflows/test.yml/badge.svg" />
+    </a>
 
 <div align='center'>
 
