@@ -1,8 +1,9 @@
 [![Tests Passing](https://github.com/Behzadsharafi/minesweeper/actions/workflows/test.yml/badge.svg)](https://github.com/Behzadsharafi/minesweeper/actions/workflows/test.yml)
 
+<!--
    <a href="https://github.com/Behzadsharafi/minesweeper/actions/workflows/test.yml">
         <img alt="Tests" src="https://github.com/Behzadsharafi/minesweeper/actions/workflows/test.yml/badge.svg" />
-    </a>
+    </a> -->
 
 <div align='center'>
 
