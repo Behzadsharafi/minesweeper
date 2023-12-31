@@ -1,3 +1,5 @@
+[![Tests Passing](https://github.com/Behzadsharafi/minesweeper/actions/workflows/test.yml.yml/badge.svg)](https://github.com/Behzadsharafi/minesweeper/actions/workflows/test.yml)
+
 <div align='center'>
 
 <h1>⛏️ Java Minesweeper Game! ⚫</h1>
