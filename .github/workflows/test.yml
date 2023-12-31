@@ -1,5 +1,3 @@
-name: Test
-
 on:
   pull_request:
   push:
@@ -8,11 +6,11 @@ on:
 
 jobs:
   test:
-    name: Running JUnit Tests
+    name: Running Units Tests
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
 
       - name: Set up JDK 17
