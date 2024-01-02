@@ -50,7 +50,7 @@ Clone the project
   git clone git@github.com:Behzadsharafi/minesweeper.git
 ```
 
-Open the project in and JDK and run the APP.java
+Open the project in a Java IDE like eclipse and run the APP.java
 
 ## :wave: Contributing
 
